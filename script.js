@@ -73,11 +73,15 @@ function updateControls() {
 function makeDraggable(element) {
     element.style.position = 'absolute';
 
+    let isDragging = false;
+
     element.addEventListener('mousedown', (event) => {
+        isDragging = true;
+
         const shiftX = event.clientX - element.getBoundingClientRect().left;
         const shiftY = event.clientY - element.getBoundingClientRect().top;
 
-        const container = element.parentElement.getBoundingClientRect();  
+        const container = element.parentElement.getBoundingClientRect();
 
         const moveAt = (pageX, pageY) => {
             let newLeft = pageX - shiftX;
@@ -96,16 +100,28 @@ function makeDraggable(element) {
         };
 
         const onMouseMove = (event) => {
-            moveAt(event.pageX, event.pageY);
+            if (isDragging) {
+                moveAt(event.pageX, event.pageY);
+            }
         };
 
         document.addEventListener('mousemove', onMouseMove);
 
-        element.onmouseup = () => {
+        const stopDragging = () => {
+            isDragging = false;
             document.removeEventListener('mousemove', onMouseMove);
-            element.onmouseup = null;
+            document.removeEventListener('mousedown', outsideClick);
         };
+
+        const outsideClick = (event) => {
+            if (!element.contains(event.target)) {
+                stopDragging();
+            }
+        };
+
+        document.addEventListener('mousedown', outsideClick);
+        document.addEventListener('mouseup', stopDragging);
     });
 
-    element.ondragstart = () => false;
+    element.ondragstart = () => false;
 }
