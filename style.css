@@ -6,7 +6,6 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
     color: #333;
 }
 
@@ -14,6 +13,7 @@ body {
     display: flex;
     gap: 20px;
     padding: 20px;
+    margin-top: 10px;
     border-radius: 15px;
     background: white;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
@@ -24,6 +24,7 @@ body {
     height: 600px;
     position: relative;
     overflow: hidden;
+    border:4px solid brown;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     background-color: #fff;
@@ -36,7 +37,6 @@ body {
 .swiper-slide img {
     width: 100%;
     height: auto;
-    border-radius: 15px;
     object-fit: cover;
 }
 
@@ -53,38 +53,24 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
     cursor: grab;
     font-size: 18px;
     font-family: 'Roboto', sans-serif;
-    color: #222;
+    color: blue;
     pointer-events: all;
-    background-color: rgba(255, 255, 255, 0.7);
     padding: 5px 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .text-editor {
     width: 300px;
     padding: 20px;
+    border:2px solid greenyellow;
     background-color: #ffffff;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
 
-textarea {
-    width: 100%;
-    height: 100px;
-    margin-bottom: 15px;
-    padding: 10px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
-    resize: none;
-}
+
 
 label {
     display: block;
@@ -100,13 +86,13 @@ input, select {
     border: 1px solid #ddd;
     border-radius: 5px;
     margin-bottom: 10px;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 1px 3px rgba(19, 156, 122, 0.05);
 }
 
 button {
     width: 100%;
     padding: 10px;
-    background-color: #007BFF;
+    background-color:seagreen ;
     color: #fff;
     font-size: 16px;
     border: none;
@@ -123,7 +109,6 @@ button:hover {
 .custom-btn {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
     z-index: 10;
     background: rgba(0, 0, 0, 0.5);
     color: #ffffff;
@@ -135,18 +120,123 @@ button:hover {
     align-items: center;
     cursor: pointer;
     font-size: 20px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease;
 }
 
 .custom-btn:hover {
-    background-color: rgba(0, 0, 0, 0.7);
-    transform: scale(1.1);
+    background-color: rgba(227, 7, 7, 0.7);
 }
 
 .prev {
-    left: 280px;
+    margin-bottom: 50px;
+    left: 235px;
 }
 
 .next {
-    right: 700px;
+    right: 620px;
+}
+.button-container {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.custom-button {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.custom-button:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.custom-button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.button-contain {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.custom-btn1 {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.custom-btn1:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.custom-btn1:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.custom{
+    display: none; 
+    height: 700px;
+    width: 450px;
+    background-color: #ddd;
+    border-radius: 10px;
+    padding: 10px;
+margin-top: 50px;   
+}
+
+
+.custom1{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 96px;
+    margin-top: 20px;
+    background-color:rebeccapurple;
+    border-radius: 10px;
+    align-items: center;
+    
+}
+.custom img{
+    height: 80px;
+    width: 80px;
+    border-radius: 5px;
+}
+.ham{
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    background-color: aqua;
+    border-radius: 50%;
+    text-align: center;
+    padding: 3px;
+    padding-top: 4px;
+}
+.s1{
+    margin-top: 10px;
+}
+.num{
+    font-size: larger;
+    margin-bottom: 5px;
+}
+.fa-bars{
+    margin-top: 6px;
+}
+.custom1.dragging {
+    opacity: 0.5;
+    border: 2px dashed #333;
 }

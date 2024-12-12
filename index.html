@@ -6,7 +6,7 @@
     <title>Celebrare Assignment</title>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <div class="container">
@@ -24,45 +24,105 @@
                     <img src="p3.avif">
                     <div class="text-overlay"></div>
                 </div>
+                <div class="swiper-slide">
+                    <img src="p4.avif">
+                    <div class="text-overlay"></div>
+                </div><div class="swiper-slide">
+                    <img src="p5.avif">
+                    <div class="text-overlay"></div>
+                </div><div class="swiper-slide">
+                    <img src="p6.avif">
+                    <div class="text-overlay"></div>
+                </div>
             </div>
-            
+
         </div>
-        <div class="custom-btn prev"><i class="fas fa-arrow-left"></i></div>
-            <div class="custom-btn next"><i class="fas fa-arrow-right"></i></div>
         <div class="swiper-pagination"></div>
 
+        <div class="custom-btn prev"><i class="fas fa-arrow-left"></i></div>
+            <div class="custom-btn next"><i class="fas fa-arrow-right"></i></div>
+
         <div class="text-editor">
-            <h3>Text Editor</h3>
-            <textarea id="text-input" placeholder="Type your text here..."></textarea>
+            <h3>Image Editor</h3>
             <label>Font Family:</label>
             <select id="font-family">
-                <option value="Arial">Arial</option>
-                <option value="Times New Roman">Times New Roman</option>
-                <option value="Courier New">Courier New</option>
-                <option value="Georgia">Georgia</option>
+                <option value="Arial, Helvetica, sans-serif">Arial</option>
+                <option value="'Courier New', Courier, monospace">Courier New</option>
+                <option value="'Times New Roman', Times, serif">Times New Roman</option>
+                <option value="Verdana, Geneva, sans-serif">Verdana</option>
+                <option value="Georgia, serif">Georgia</option>
+                <option value="'Comic Sans MS', cursive, sans-serif">Comic Sans MS</option>
+                <option value="Tahoma, Geneva, sans-serif">Tahoma</option>
+                <option value="'Palatino Linotype', 'Book Antiqua', Palatino, serif">Palatino Linotype</option>
+                <option value="'Trebuchet MS', Helvetica, sans-serif">Trebuchet MS</option>
+                <option value="'Lucida Sans Unicode', 'Lucida Grande', sans-serif">Lucida Sans Unicode</option>
             </select>
             <label for="font-size">Font Size:</label>
             <select id="font-size">
                 <option value="12">12px</option>
-                <option value="14">14px</option>
+                <option value="14" selected>14px</option>
                 <option value="16">16px</option>
                 <option value="18">18px</option>
-                <option value="20" selected>20px</option>
+                <option value="20" >20px</option>
                 <option value="24">24px</option>
                 <option value="30">30px</option>
                 <option value="36">36px</option>
+                <option value="36">40px</option>
+                <option value="36">44px</option>
                 <option value="48">48px</option>
             </select>            
             <label>Font Color:</label>
             <input type="color" id="font-color" value="#000000">
             <button id="add-text">Add Text</button>
+            <div class="button-container">
+                <button class="custom-button">Click Me</button>
+            </div>
+            <div class="button-contain">
+                <button class="custom-btn1">Save in Firebase</button>
+            </div>
         </div>
         <div class="swiper-slide-active">
             <div class="text-overlay"></div>
         </div>
     </div>
-
+    
+    <div class="custom">
+        <div class="custom1" draggable="true">
+            <div class="ham"><i class="fa-solid fa-bars"></i></div>
+            <div class="num">Image 1</div>
+            <div><img src="p1.avif" alt="Image 1"></div>
+        </div>
+        <div class="custom1" draggable="true">
+            <div class="ham"><i class="fa-solid fa-bars"></i></div>
+            <div class="num">Image 2</div>
+            <div><img src="p2.avif" alt="Image 2"></div>
+        </div>
+        <div class="custom1" draggable="true">
+            <div class="ham"><i class="fa-solid fa-bars"></i></div>
+            <div class="num">Image 3</div>
+            <div><img src="p3.avif" alt="Image 3"></div>
+        </div>
+        <div class="custom1" draggable="true">
+            <div class="ham"><i class="fa-solid fa-bars"></i></div>
+            <div class="num">Image 4</div>
+            <div><img src="p4.avif" alt="Image 4"></div>
+        </div>
+        <div class="custom1" draggable="true">
+            <div class="ham"><i class="fa-solid fa-bars"></i></div>
+            <div class="num">Image 5</div>
+            <div><img src="p5.avif" alt="Image 5"></div>
+        </div>
+        <div class="custom1" draggable="true">
+            <div class="ham"><i class="fa-solid fa-bars"></i></div>
+            <div class="num">Image 6</div>
+            <div><img src="p6.avif" alt="Image 6"></div>
+        </div>
+        <button class="s1">Save</button>
+    </div>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="script.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 </html>
